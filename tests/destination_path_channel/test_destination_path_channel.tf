@@ -16,8 +16,8 @@ terraform {
 module "main" {
   source = "../.."
 
-  name                = "TEST_PATH_CHANNEL"
-  mtu                 = 9000
+  name    = "TEST_PATH_CHANNEL"
+  mtu     = 9000
   node_id = 101
   channel = "PC1"
 }

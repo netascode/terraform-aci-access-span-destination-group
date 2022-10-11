@@ -16,12 +16,12 @@ terraform {
 module "main" {
   source = "../.."
 
-  name                = "TEST_PATH_PORT"
-  mtu                 = 9000
-  pod_id = 2
+  name    = "TEST_PATH_PORT"
+  mtu     = 9000
+  pod_id  = 2
   node_id = 101
-  module = 2
-  port = 10
+  module  = 2
+  port    = 10
 }
 
 data "aci_rest_managed" "spanDestGrp" {
