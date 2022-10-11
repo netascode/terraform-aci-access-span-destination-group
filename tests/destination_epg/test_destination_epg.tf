@@ -16,7 +16,7 @@ terraform {
 module "main" {
   source = "../.."
 
-  name                = "TEST_FULL"
+  name                = "TEST_EPG"
   ip                  = "1.1.1.1"
   source_prefix       = "2.2.2.2"
   dscp                = "CS0"
@@ -30,7 +30,7 @@ module "main" {
 }
 
 data "aci_rest_managed" "spanDestGrp" {
-  dn = "uni/infra/destgrp-TEST_FULL"
+  dn = "uni/infra/destgrp-TEST_EPG"
 
   depends_on = [module.main]
 }
@@ -41,7 +41,7 @@ resource "test_assertions" "spanDestGrp" {
   equal "name" {
     description = "name"
     got         = data.aci_rest_managed.spanDestGrp.content.name
-    want        = "TEST_FULL"
+    want        = "TEST_EPG"
   }
 
   equal "descr" {
@@ -52,7 +52,7 @@ resource "test_assertions" "spanDestGrp" {
 }
 
 data "aci_rest_managed" "spanDest" {
-  dn = "${data.aci_rest_managed.spanDestGrp.id}/dest-TEST_FULL"
+  dn = "${data.aci_rest_managed.spanDestGrp.id}/dest-TEST_EPG"
 
   depends_on = [module.main]
 }
@@ -63,7 +63,7 @@ resource "test_assertions" "spanDest" {
   equal "name" {
     description = "name"
     got         = data.aci_rest_managed.spanDest.content.name
-    want        = "TEST_FULL"
+    want        = "TEST_EPG"
   }
 
   equal "descr" {

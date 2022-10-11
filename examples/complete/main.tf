@@ -1,4 +1,4 @@
-module "aci_access_span_destination_group" {
+module "aci_access_span_destination_group-destination_epg" {
   source  = "netascode/access-span-destination-group/aci"
   version = ">= 0.0.1"
 
@@ -14,3 +14,41 @@ module "aci_access_span_destination_group" {
   application_profile = "APP1"
   endpoint_group      = "EPG1"
 }
+
+module "aci_access_span_destination_group-destination_port" {
+  source  = "netascode/access-span-destination-group/aci"
+  version = ">= 0.0.1"
+
+  name    = "ABC"
+  mtu     = 9000
+  pod_id  = 2
+  node_id = 101
+  module  = 2
+  port    = 10
+}
+
+module "aci_access_span_destination_group-destination_subport" {
+  source  = "netascode/access-span-destination-group/aci"
+  version = ">= 0.0.1"
+
+  name     = "ABC"
+  mtu      = 9000
+  pod_id   = 2
+  node_id  = 101
+  module   = 2
+  port     = 10
+  sub_port = 5
+}
+
+
+module "aci_access_span_destination_group-destination_channel" {
+  source  = "netascode/access-span-destination-group/aci"
+  version = ">= 0.0.1"
+
+  name    = "ABC"
+  mtu     = 9000
+  node_id = 101
+  channel = "PC1"
+}
+
+

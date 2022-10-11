@@ -21,57 +21,57 @@ variable "description" {
 }
 
 variable "node_id" {
-  description = "Access SPAN Destination Groups Node ID."
+  description = "Access SPAN Destination Groups Node ID. Minimum value: `1`. Maximum value: `400`."
   type        = number
   default     = 0
 
   validation {
     condition     = var.node_id >= 0 && var.node_id <= 4000
-    error_message = " Minimum value: `1`. Maximum value: `400`."
+    error_message = "Minimum value: `1`. Maximum value: `400`."
   }
 }
 
 variable "port" {
-  description = "Access SPAN Destination Groups port."
+  description = "Access SPAN Destination Groups port. Minimum value: `1`. Maximum value: `127`."
   type        = number
   default     = 0
 
   validation {
     condition     = var.port >= 0 && var.port <= 127
-    error_message = " Minimum value: `1`. Maximum value: `127`."
+    error_message = "Minimum value: `1`. Maximum value: `127`."
   }
 }
 
 variable "sub_port" {
-  description = "Access SPAN Destination Groups Sub-port."
+  description = "Access SPAN Destination Groups Sub-port. Minimum value: `1`. Maximum value: `16`."
   type        = number
   default     = 0
 
   validation {
     condition     = var.sub_port >= 0 && var.sub_port <= 16
-    error_message = " Minimum value: `1`. Maximum value: `16`."
+    error_message = "Minimum value: `1`. Maximum value: `16`."
   }
 }
 
 variable "module" {
-  description = "Access SPAN Destination Groups Sub-port."
+  description = "Access SPAN Destination Groups Module. Minimum value: `1`. Maximum value: `9`."
   type        = number
   default     = 1
 
   validation {
     condition     = var.module >= 1 && var.module <= 9
-    error_message = " Minimum value: `1`. Maximum value: `9`."
+    error_message = "Minimum value: `1`. Maximum value: `9`."
   }
 }
 
 variable "pod_id" {
-  description = "Access SPAN Destination Groups Pod ID."
+  description = "Access SPAN Destination Groups Pod ID. Minimum value: `1`. Maximum value: `255`."
   type        = number
   default     = 1
 
   validation {
     condition     = var.pod_id >= 1 && var.pod_id <= 255
-    error_message = " Minimum value: `1`. Maximum value: `255`."
+    error_message = "Minimum value: `1`. Maximum value: `255`."
   }
 }
 
@@ -100,7 +100,7 @@ variable "source_prefix" {
 }
 
 variable "dscp" {
-  description = "Access SPAN Destination Group DSCP."
+  description = "Access SPAN Destination Group DSCP. Allowed values are `unspecified`, `CS0`, `CS1`, `AF11`, `AF12`, `AF13`, `CS2`, `AF21`, `AF22`, `AF23`, `CS4`, `AF41`, `AF42`, `AF43`, `CS5`, `VA`, `EF`, `CS6`, `CS7` or a number between 0 and 63."
   type        = string
   default     = "unspecified"
 
@@ -112,40 +112,40 @@ variable "dscp" {
 
 
 variable "flow_id" {
-  description = "Access SPAN Destination Group flow id."
+  description = "Access SPAN Destination Group flow id. Allowed values between 1-1023"
   type        = number
   default     = 1
 
   validation {
     condition     = var.flow_id >= 1 && var.flow_id <= 1023
-    error_message = "Allowed values between 1-1023"
+    error_message = "Allowed values between 1-1023."
   }
 }
 
 variable "mtu" {
-  description = "Access SPAN Destination Group MTU."
+  description = "Access SPAN Destination Group MTU. Allowed values between 64-9216"
   type        = number
   default     = 1518
 
   validation {
     condition     = var.mtu >= 64 && var.mtu <= 9216
-    error_message = "Allowed values between 64-9216"
+    error_message = "Allowed values between 64-9216."
   }
 }
 
 variable "ttl" {
-  description = "Access SPAN Destination Group TTL."
+  description = "Access SPAN Destination Group TTL. Allowed values between 1-255."
   type        = number
   default     = 64
 
   validation {
     condition     = var.ttl >= 1 && var.ttl <= 255
-    error_message = "Allowed values between 1-255"
+    error_message = "Allowed values between 1-255."
   }
 }
 
 variable "span_version" {
-  description = "Access SPAN Destination Group SPAN version."
+  description = "Access SPAN Destination Group SPAN version. Allowed values between 1-2."
   type        = number
   default     = 1
 
