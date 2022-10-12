@@ -20,19 +20,41 @@ variable "description" {
   }
 }
 
+variable "pod_id" {
+  description = "Access SPAN Destination Group Pod ID. Minimum value: `1`. Maximum value: `255`."
+  type        = number
+  default     = 1
+
+  validation {
+    condition     = var.pod_id >= 1 && var.pod_id <= 255
+    error_message = "Minimum value: `1`. Maximum value: `255`."
+  }
+}
+
 variable "node_id" {
-  description = "Access SPAN Destination Groups Node ID. Minimum value: `1`. Maximum value: `400`."
+  description = "Access SPAN Destination Group Node ID. Minimum value: `1`. Maximum value: `4000`."
   type        = number
   default     = 0
 
   validation {
     condition     = var.node_id >= 0 && var.node_id <= 4000
-    error_message = "Minimum value: `1`. Maximum value: `400`."
+    error_message = "Minimum value: `1`. Maximum value: `4000`."
+  }
+}
+
+variable "module" {
+  description = "Access SPAN Destination Group Module. Minimum value: `1`. Maximum value: `9`."
+  type        = number
+  default     = 1
+
+  validation {
+    condition     = var.module >= 1 && var.module <= 9
+    error_message = "Minimum value: `1`. Maximum value: `9`."
   }
 }
 
 variable "port" {
-  description = "Access SPAN Destination Groups port. Minimum value: `1`. Maximum value: `127`."
+  description = "Access SPAN Destination Group port. Minimum value: `1`. Maximum value: `127`."
   type        = number
   default     = 0
 
@@ -43,7 +65,7 @@ variable "port" {
 }
 
 variable "sub_port" {
-  description = "Access SPAN Destination Groups Sub-port. Minimum value: `1`. Maximum value: `16`."
+  description = "Access SPAN Destination Group Sub-port. Minimum value: `1`. Maximum value: `16`."
   type        = number
   default     = 0
 
@@ -53,30 +75,8 @@ variable "sub_port" {
   }
 }
 
-variable "module" {
-  description = "Access SPAN Destination Groups Module. Minimum value: `1`. Maximum value: `9`."
-  type        = number
-  default     = 1
-
-  validation {
-    condition     = var.module >= 1 && var.module <= 9
-    error_message = "Minimum value: `1`. Maximum value: `9`."
-  }
-}
-
-variable "pod_id" {
-  description = "Access SPAN Destination Groups Pod ID. Minimum value: `1`. Maximum value: `255`."
-  type        = number
-  default     = 1
-
-  validation {
-    condition     = var.pod_id >= 1 && var.pod_id <= 255
-    error_message = "Minimum value: `1`. Maximum value: `255`."
-  }
-}
-
 variable "channel" {
-  description = "Access SPAN Destination Groups Channel Name."
+  description = "Access SPAN Destination Group Channel Name."
   type        = string
   default     = ""
 
@@ -87,7 +87,7 @@ variable "channel" {
 }
 
 variable "ip" {
-  description = "Access SPAN Destination Groups IP."
+  description = "Access SPAN Destination Group IP."
   type        = string
   default     = ""
 }
@@ -112,46 +112,46 @@ variable "dscp" {
 
 
 variable "flow_id" {
-  description = "Access SPAN Destination Group flow id. Allowed values between 1-1023"
+  description = "Access SPAN Destination Group flow id. Allowed values: 1-1023."
   type        = number
   default     = 1
 
   validation {
     condition     = var.flow_id >= 1 && var.flow_id <= 1023
-    error_message = "Allowed values between 1-1023."
+    error_message = "Allowed values: 1-1023."
   }
 }
 
 variable "mtu" {
-  description = "Access SPAN Destination Group MTU. Allowed values between 64-9216"
+  description = "Access SPAN Destination Group MTU. Allowed values: 64-9216."
   type        = number
   default     = 1518
 
   validation {
     condition     = var.mtu >= 64 && var.mtu <= 9216
-    error_message = "Allowed values between 64-9216."
+    error_message = "Allowed values: 64-9216."
   }
 }
 
 variable "ttl" {
-  description = "Access SPAN Destination Group TTL. Allowed values between 1-255."
+  description = "Access SPAN Destination Group TTL. Allowed values: 1-255."
   type        = number
   default     = 64
 
   validation {
     condition     = var.ttl >= 1 && var.ttl <= 255
-    error_message = "Allowed values between 1-255."
+    error_message = "Allowed values: 1-255."
   }
 }
 
 variable "span_version" {
-  description = "Access SPAN Destination Group SPAN version. Allowed values between 1-2."
+  description = "Access SPAN Destination Group SPAN version. Allowed values: 1-2."
   type        = number
   default     = 1
 
   validation {
     condition     = var.span_version >= 1 && var.span_version <= 2
-    error_message = "Allowed values between 1-2"
+    error_message = "Allowed values: 1-2."
   }
 }
 

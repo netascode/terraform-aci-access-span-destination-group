@@ -1,5 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
-[![Tests](https://github.com/netascode/terraform-aci-access-span-destination-group/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-scaffolding/actions/workflows/test.yml)
+[![Tests](https://github.com/netascode/terraform-aci-access-span-destination-group/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-access-span-destination-group/actions/workflows/test.yml)
 
 # Terraform ACI Access SPAN Destination Group Module
 
@@ -13,7 +13,7 @@ Location in GUI:
 ```hcl
 module "aci_access_span_destination_group-destination_epg" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.0.1"
+  version = ">= 0.1.0"
 
   name                = "ABC"
   ip                  = "1.1.1.1"
@@ -30,7 +30,7 @@ module "aci_access_span_destination_group-destination_epg" {
 
 module "aci_access_span_destination_group-destination_port" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.0.1"
+  version = ">= 0.1.0"
 
   name    = "ABC"
   mtu     = 9000
@@ -42,7 +42,7 @@ module "aci_access_span_destination_group-destination_port" {
 
 module "aci_access_span_destination_group-destination_subport" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.0.1"
+  version = ">= 0.1.0"
 
   name     = "ABC"
   mtu      = 9000
@@ -56,7 +56,7 @@ module "aci_access_span_destination_group-destination_subport" {
 
 module "aci_access_span_destination_group-destination_channel" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.0.1"
+  version = ">= 0.1.0"
 
   name    = "ABC"
   mtu     = 9000
@@ -71,7 +71,7 @@ module "aci_access_span_destination_group-destination_channel" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_aci"></a> [aci](#requirement\_aci) | >= 2.0.0 |
 
 ## Providers
@@ -86,19 +86,19 @@ module "aci_access_span_destination_group-destination_channel" {
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Access SPAN Destination Group name. | `string` | n/a | yes |
 | <a name="input_description"></a> [description](#input\_description) | Access SPAN Destination Group description. | `string` | `""` | no |
-| <a name="input_node_id"></a> [node\_id](#input\_node\_id) | Access SPAN Destination Groups Node ID. Minimum value: `1`. Maximum value: `400`. | `number` | `0` | no |
-| <a name="input_port"></a> [port](#input\_port) | Access SPAN Destination Groups port. Minimum value: `1`. Maximum value: `127`. | `number` | `0` | no |
-| <a name="input_sub_port"></a> [sub\_port](#input\_sub\_port) | Access SPAN Destination Groups Sub-port. Minimum value: `1`. Maximum value: `16`. | `number` | `0` | no |
-| <a name="input_module"></a> [module](#input\_module) | Access SPAN Destination Groups Module. Minimum value: `1`. Maximum value: `9`. | `number` | `1` | no |
-| <a name="input_pod_id"></a> [pod\_id](#input\_pod\_id) | Access SPAN Destination Groups Pod ID. Minimum value: `1`. Maximum value: `255`. | `number` | `1` | no |
-| <a name="input_channel"></a> [channel](#input\_channel) | Access SPAN Destination Groups Channel Name. | `string` | `""` | no |
-| <a name="input_ip"></a> [ip](#input\_ip) | Access SPAN Destination Groups IP. | `string` | `""` | no |
+| <a name="input_pod_id"></a> [pod\_id](#input\_pod\_id) | Access SPAN Destination Group Pod ID. Minimum value: `1`. Maximum value: `255`. | `number` | `1` | no |
+| <a name="input_node_id"></a> [node\_id](#input\_node\_id) | Access SPAN Destination Group Node ID. Minimum value: `1`. Maximum value: `4000`. | `number` | `0` | no |
+| <a name="input_module"></a> [module](#input\_module) | Access SPAN Destination Group Module. Minimum value: `1`. Maximum value: `9`. | `number` | `1` | no |
+| <a name="input_port"></a> [port](#input\_port) | Access SPAN Destination Group port. Minimum value: `1`. Maximum value: `127`. | `number` | `0` | no |
+| <a name="input_sub_port"></a> [sub\_port](#input\_sub\_port) | Access SPAN Destination Group Sub-port. Minimum value: `1`. Maximum value: `16`. | `number` | `0` | no |
+| <a name="input_channel"></a> [channel](#input\_channel) | Access SPAN Destination Group Channel Name. | `string` | `""` | no |
+| <a name="input_ip"></a> [ip](#input\_ip) | Access SPAN Destination Group IP. | `string` | `""` | no |
 | <a name="input_source_prefix"></a> [source\_prefix](#input\_source\_prefix) | Access SPAN Destination Group source prefix. | `string` | `""` | no |
 | <a name="input_dscp"></a> [dscp](#input\_dscp) | Access SPAN Destination Group DSCP. Allowed values are `unspecified`, `CS0`, `CS1`, `AF11`, `AF12`, `AF13`, `CS2`, `AF21`, `AF22`, `AF23`, `CS4`, `AF41`, `AF42`, `AF43`, `CS5`, `VA`, `EF`, `CS6`, `CS7` or a number between 0 and 63. | `string` | `"unspecified"` | no |
-| <a name="input_flow_id"></a> [flow\_id](#input\_flow\_id) | Access SPAN Destination Group flow id. Allowed values between 1-1023 | `number` | `1` | no |
-| <a name="input_mtu"></a> [mtu](#input\_mtu) | Access SPAN Destination Group MTU. Allowed values between 64-9216 | `number` | `1518` | no |
-| <a name="input_ttl"></a> [ttl](#input\_ttl) | Access SPAN Destination Group TTL. Allowed values between 1-255. | `number` | `64` | no |
-| <a name="input_span_version"></a> [span\_version](#input\_span\_version) | Access SPAN Destination Group SPAN version. Allowed values between 1-2. | `number` | `1` | no |
+| <a name="input_flow_id"></a> [flow\_id](#input\_flow\_id) | Access SPAN Destination Group flow id. Allowed values: 1-1023. | `number` | `1` | no |
+| <a name="input_mtu"></a> [mtu](#input\_mtu) | Access SPAN Destination Group MTU. Allowed values: 64-9216. | `number` | `1518` | no |
+| <a name="input_ttl"></a> [ttl](#input\_ttl) | Access SPAN Destination Group TTL. Allowed values: 1-255. | `number` | `64` | no |
+| <a name="input_span_version"></a> [span\_version](#input\_span\_version) | Access SPAN Destination Group SPAN version. Allowed values: 1-2. | `number` | `1` | no |
 | <a name="input_enforced_version"></a> [enforced\_version](#input\_enforced\_version) | Access SPAN Destination Group enforced version flag. | `bool` | `false` | no |
 | <a name="input_tenant"></a> [tenant](#input\_tenant) | Access SPAN Destination Group Tenant name. | `string` | `""` | no |
 | <a name="input_application_profile"></a> [application\_profile](#input\_application\_profile) | Access SPAN Destination Group Application Profile name. | `string` | `""` | no |
