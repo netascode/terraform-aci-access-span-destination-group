@@ -58,7 +58,7 @@ resource "aci_rest_managed" "spanRsDestEpg" {
     mtu         = var.mtu
     ttl         = var.ttl
     ver         = "ver${var.span_version}"
-    verEnforced = var.enforced_version == true ? "yes" : "no"
+    verEnforced = var.enforce_version == true ? "yes" : "no"
     tDn         = "uni/tn-${var.tenant}/ap-${var.application_profile}/epg-${var.endpoint_group}"
   }
 }

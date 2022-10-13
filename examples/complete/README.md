@@ -14,7 +14,7 @@ Note that this example will create resources. Resources can be destroyed with `t
 ```hcl
 module "aci_access_span_destination_group-destination_epg" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.1.1"
 
   name                = "ABC"
   ip                  = "1.1.1.1"
@@ -23,7 +23,7 @@ module "aci_access_span_destination_group-destination_epg" {
   mtu                 = 9000
   ttl                 = 16
   span_version        = 2
-  enforced_version    = true
+  enforce_version     = true
   tenant              = "TEN1"
   application_profile = "APP1"
   endpoint_group      = "EPG1"
@@ -31,7 +31,7 @@ module "aci_access_span_destination_group-destination_epg" {
 
 module "aci_access_span_destination_group-destination_port" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.1.1"
 
   name    = "ABC"
   mtu     = 9000
@@ -43,7 +43,7 @@ module "aci_access_span_destination_group-destination_port" {
 
 module "aci_access_span_destination_group-destination_subport" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.1.1"
 
   name     = "ABC"
   mtu      = 9000
@@ -57,7 +57,7 @@ module "aci_access_span_destination_group-destination_subport" {
 
 module "aci_access_span_destination_group-destination_channel" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.1.1"
 
   name    = "ABC"
   mtu     = 9000

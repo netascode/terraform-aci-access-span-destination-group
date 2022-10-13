@@ -155,7 +155,7 @@ variable "span_version" {
   }
 }
 
-variable "enforced_version" {
+variable "enforce_version" {
   description = "Access SPAN Destination Group enforced version flag."
   type        = bool
   default     = false

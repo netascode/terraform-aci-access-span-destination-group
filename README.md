@@ -13,7 +13,7 @@ Location in GUI:
 ```hcl
 module "aci_access_span_destination_group-destination_epg" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.1.1"
 
   name                = "ABC"
   ip                  = "1.1.1.1"
@@ -22,7 +22,7 @@ module "aci_access_span_destination_group-destination_epg" {
   mtu                 = 9000
   ttl                 = 16
   span_version        = 2
-  enforced_version    = true
+  enforce_version     = true
   tenant              = "TEN1"
   application_profile = "APP1"
   endpoint_group      = "EPG1"
@@ -30,7 +30,7 @@ module "aci_access_span_destination_group-destination_epg" {
 
 module "aci_access_span_destination_group-destination_port" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.1.1"
 
   name    = "ABC"
   mtu     = 9000
@@ -42,7 +42,7 @@ module "aci_access_span_destination_group-destination_port" {
 
 module "aci_access_span_destination_group-destination_subport" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.1.1"
 
   name     = "ABC"
   mtu      = 9000
@@ -56,7 +56,7 @@ module "aci_access_span_destination_group-destination_subport" {
 
 module "aci_access_span_destination_group-destination_channel" {
   source  = "netascode/access-span-destination-group/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.1.1"
 
   name    = "ABC"
   mtu     = 9000
@@ -99,7 +99,7 @@ module "aci_access_span_destination_group-destination_channel" {
 | <a name="input_mtu"></a> [mtu](#input\_mtu) | Access SPAN Destination Group MTU. Allowed values: 64-9216. | `number` | `1518` | no |
 | <a name="input_ttl"></a> [ttl](#input\_ttl) | Access SPAN Destination Group TTL. Allowed values: 1-255. | `number` | `64` | no |
 | <a name="input_span_version"></a> [span\_version](#input\_span\_version) | Access SPAN Destination Group SPAN version. Allowed values: 1-2. | `number` | `1` | no |
-| <a name="input_enforced_version"></a> [enforced\_version](#input\_enforced\_version) | Access SPAN Destination Group enforced version flag. | `bool` | `false` | no |
+| <a name="input_enforce_version"></a> [enforce\_version](#input\_enforce\_version) | Access SPAN Destination Group enforced version flag. | `bool` | `false` | no |
 | <a name="input_tenant"></a> [tenant](#input\_tenant) | Access SPAN Destination Group Tenant name. | `string` | `""` | no |
 | <a name="input_application_profile"></a> [application\_profile](#input\_application\_profile) | Access SPAN Destination Group Application Profile name. | `string` | `""` | no |
 | <a name="input_endpoint_group"></a> [endpoint\_group](#input\_endpoint\_group) | Access SPAN Destination Group Endpoint Group name. | `string` | `""` | no |
