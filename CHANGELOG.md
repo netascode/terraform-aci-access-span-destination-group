@@ -1,4 +1,4 @@
-## 0.1.1 (unreleased)
+## 0.1.1
 
 - BREAKING CHANGE: Rename `enforced_version` attribute to `enforce_version`
 
