@@ -1,3 +1,7 @@
+## 0.1.2 (unreleased)
+
+- Fix DSCP value validation
+
 ## 0.1.1
 
 - BREAKING CHANGE: Rename `enforced_version` attribute to `enforce_version`

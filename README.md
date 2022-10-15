@@ -94,7 +94,7 @@ module "aci_access_span_destination_group-destination_channel" {
 | <a name="input_channel"></a> [channel](#input\_channel) | Access SPAN Destination Group Channel Name. | `string` | `""` | no |
 | <a name="input_ip"></a> [ip](#input\_ip) | Access SPAN Destination Group IP. | `string` | `""` | no |
 | <a name="input_source_prefix"></a> [source\_prefix](#input\_source\_prefix) | Access SPAN Destination Group source prefix. | `string` | `""` | no |
-| <a name="input_dscp"></a> [dscp](#input\_dscp) | Access SPAN Destination Group DSCP. Allowed values are `unspecified`, `CS0`, `CS1`, `AF11`, `AF12`, `AF13`, `CS2`, `AF21`, `AF22`, `AF23`, `CS4`, `AF41`, `AF42`, `AF43`, `CS5`, `VA`, `EF`, `CS6`, `CS7` or a number between 0 and 63. | `string` | `"unspecified"` | no |
+| <a name="input_dscp"></a> [dscp](#input\_dscp) | Access SPAN Destination Group DSCP. Allowed values are `unspecified`, `CS0`, `CS1`, `AF11`, `AF12`, `AF13`, `CS2`, `AF21`, `AF22`, `AF23`, `CS3`, `AF31`, `AF32`, `AF33`, `CS4`, `AF41`, `AF42`, `AF43`, `CS5`, `VA`, `EF`, `CS6`, `CS7` or a number between 0 and 63. | `string` | `"unspecified"` | no |
 | <a name="input_flow_id"></a> [flow\_id](#input\_flow\_id) | Access SPAN Destination Group flow id. Allowed values: 1-1023. | `number` | `1` | no |
 | <a name="input_mtu"></a> [mtu](#input\_mtu) | Access SPAN Destination Group MTU. Allowed values: 64-9216. | `number` | `1518` | no |
 | <a name="input_ttl"></a> [ttl](#input\_ttl) | Access SPAN Destination Group TTL. Allowed values: 1-255. | `number` | `64` | no |
